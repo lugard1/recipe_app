@@ -1,14 +1,30 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Foods</h1>
 
 <div id="foods">
-  <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
-  <% end %>
+  <table class="the_table">
+      <tr>
+        <th>ID.</th>
+        <th>Name</th>
+        <th>Measurement Unit</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+
+    <% @foods.each do |food| %>
+      <% if food.user_id == current_user.id %>
+      
+        <tr>
+          <td><%= food.id %></th>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= food.price %></td>
+          <td><%= food.quantity %></td>
+          <td><%= button_to "Destroy this food", food, method: :delete %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
 </div>
 
 <%= link_to "New food", new_food_path %>
