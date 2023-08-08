@@ -7,7 +7,9 @@ class FoodsController < ApplicationController
   end
 
   # GET /foods/1 or /foods/1.json
-  def show; end
+  def show
+    
+  end
 
   # GET /foods/new
   def new
@@ -64,6 +66,6 @@ class FoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def food_params
-    params.fetch(:food, {})
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity, :user_id)
   end
 end
