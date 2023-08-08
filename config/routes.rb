@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   # Defines the root path route ("/")
-  # root to:"users#index"
-  root to: "home#index"
+  root to:"users#index"
+  # root to: "home#index"
 
   resources :users
   resources :foods, only: %i[index new create destroy]
