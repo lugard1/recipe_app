@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.form-center {
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.form-center h2 {
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.form-center input[type=text],
+.form-center input[type=email],
+.form-center input[type=password] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.form-center input[type=submit] {
+  padding: 8px 15px;
+  font-family: sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.food-list {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.title-button {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.new-food {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #060057;
+  border: 1px solid #060057;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.new-food:hover {
+  background-color: #060057;
+  color: #fff;
+}
+
+.foods-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+tr,
+td {
+  font-family: sans-serif;
+  font-size: 18px;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dfdfdf;
+}
+
+.button_to button {
+  padding: 7px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.food-form-title {
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+.foods-list-link {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.foods-list-link:hover {
+  text-decoration: underline;
+}
+
+.food-details {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.food-details h1 {
+  font-family: sans-serif;
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.food-details p {
+  font-family: sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.food-actions {
+  display: flex;
+  margin-top: 30px;
+}
+
+.food-actions button {
+  margin-right: 15px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.foods-link {
+  padding: 7px;
+  border: 1px solid #161616;
+  background-color: #e6e6ee;
+  margin-right: 15px;
+  text-decoration: none;
+  color: #232323;
+  font-family: sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+}
