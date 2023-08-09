@@ -1,13 +1,15 @@
-<div id="<%= dom_id recipe %>" class="recipe-card">
-  <div class="recipe-display">
-    <p>
-      <strong><%= recipee.name %></strong>
-    </p>
-  </div>
-    <div class="recipe-description">
+<%= link_to recipe_path(recipe) do %>
+  <div id="<%= dom_id recipe %>" class="dom-recipe-class">
+    <div class="recipe-display">
+      <p>
+        <strong><%= recipe.name %></strong>
+      </p>
+    </div>
+    <div class="recipe-desc">
       <p>
         <strong>Description:</strong>
-        <%= recipee.description %>
+        <%= recipe.description %>
       </p>
+    </div>
   </div>
-</div>
+<% end %>
