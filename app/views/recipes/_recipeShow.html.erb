@@ -1,0 +1,22 @@
+<div id="<%= dom_id recipe %>" class="dom-recipe-class2">
+
+  <p class = "show_name"><strong><%= recipe.name %></strong></p>
+
+  <div class = "show-display">
+    <div class = "recipe-time">
+      <p>Preparation time: <%= recipe.preparation_time %> </p>
+      <p>Cooking time: <%= recipe.cooking_time %> </p>
+      <p>Steps go here...</p>
+    </div>
+    <div class="public-label">
+      <%= render "checkbox", recipe: recipe %>
+    </div>
+    <div>
+    
+    
+  </div>
+  <div class = "show-buttons">
+    <button>Generate Shopping List</button>
+    <button>Add Ingredient</button>
+  </div>
+</div>
