@@ -1,2 +1,15 @@
-<div id="<%= dom_id recipe %>">
-</div>
+<%= link_to recipe_path(recipe) do %>
+  <div id="<%= dom_id recipe %>" class="dom-recipe-class">
+    <div class="recipe-display">
+      <p>
+        <strong><%= recipe.name %></strong>
+      </p>
+    </div>
+    <div class="recipe-desc">
+      <p>
+        <strong>Description:</strong>
+        <%= recipe.description %>
+      </p>
+    </div>
+  </div>
+<% end %>
