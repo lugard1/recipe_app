@@ -15,6 +15,7 @@ class RecipeFoodsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = @recipe.recipe_foods.new
     @foods = current_user.foods
+    puts "@foods: #{@foods}"
   end
 
   # POST /recipe_foods or /recipe_foods.json
