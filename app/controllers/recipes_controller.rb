@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    @recipeshow = Recipe.find(params[:id])
+    @recipeshow = Recipe.includes(:recipe_foods).find(params[:id])
   end
 
   # GET /recipes/new

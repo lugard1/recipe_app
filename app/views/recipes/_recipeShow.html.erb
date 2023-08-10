@@ -22,15 +22,14 @@
   <div class="show-recipe-foods">
     <h3>Recipe Foods:</h3>
     <ul>
-      <% recipe.recipe_foods.each do |recipe_food| %>
-        <li>
-        <%= recipe_food.food.name %> -
-        <%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %> |
-        Value: <%= recipe_food.value %>
-        <%= form_with(model: [recipe, recipe_food], method: :delete, local: true) do |form| %>
+
+      <% @recipeshow.recipe_foods.each do |recipe_food| %>
+        <p>Food: <%= recipe_food.food.name %></p>
+        <p>Quantity: <%= recipe_food.quantity %></p>
+        <p>Value: <%= recipe_food.value %></p>
+         <%= form_with(model: [recipe, recipe_food], method: :delete, local: true) do |form| %>
           <%= form.submit 'Delete', data: { confirm: 'Are you sure?' } %>
         <% end %>
-      </li>
       <% end %>
     </ul>
   </div>
