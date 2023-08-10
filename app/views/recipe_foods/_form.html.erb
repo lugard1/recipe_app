@@ -6,7 +6,7 @@
 
       <ul>
         <% @recipe_food.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li><%= error.full_message.capitalize %></li>
         <% end %>
       </ul>
     </div>

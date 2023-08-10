@@ -1,5 +1,5 @@
 <h2 class="text_center">Add Recipe Food</h2>
-<%= render 'form' %>
+<%= render partial: 'form', locals: { recipe: @recipe, recipe_food: @recipe_food }  %>
 
 <p class="text_center">
 <%= link_to 'Back to Recipe', @recipe %>
