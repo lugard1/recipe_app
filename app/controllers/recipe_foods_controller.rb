@@ -15,13 +15,18 @@ class RecipeFoodsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = @recipe.recipe_foods.new
     @foods = current_user.foods
-    puts "@foods: #{@foods}"
   end
 
   # POST /recipe_foods or /recipe_foods.json
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
+    @recipe = Recipe.find(params[:recipe_id])
+    @foods = current_user.foods
 
+    @recipe_food.value = @recipe_food.quantity * @recipe_food.food.price
+  
+    @recipe_food.recipe = @recipe
+  
     respond_to do |format|
       if @recipe_food.save
         format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully created.' }
@@ -52,6 +57,11 @@ class RecipeFoodsController < ApplicationController
   def destroy
     @recipe_food.destroy
     redirect_to @recipe, notice: 'Recipe Food was successfully destroyed.'
+  end
+
+  def general_shopping_list
+    @user_foods = current_user.foods
+    @missing_foods = @user_foods - current_user.recipes.map(&:foods).flatten.uniq
   end
 
   private

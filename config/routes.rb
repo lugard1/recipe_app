@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   resources :shopping_lists 
   resources :recipes do
     resources :recipe_foods, only: [:new, :create, :edit, :update, :destroy]
+    
+    member do
+      get 'general_shopping_list'
+    end
   end
 end
