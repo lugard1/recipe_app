@@ -1,6 +1,7 @@
 <div class = "recipe_container">
 <h1 class = "recipe-title">Recipes</h1>
 <button> <%= link_to "Add recipe", new_recipe_path %> </button>
+<%= link_to "Public Recipes", public_recipes_path %>
 
 <div id="recipes">
     <% @recipes.each do |recipe| %>
@@ -11,4 +12,4 @@
         <strong><%= link_to "REMOVE", recipe, method: :delete, class: "remove-btn" %></strong>
       <% end %>
     <% end %>
-  </div>
+</div>
