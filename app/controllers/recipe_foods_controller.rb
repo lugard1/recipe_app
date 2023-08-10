@@ -22,10 +22,10 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe = Recipe.find(params[:recipe_id])
     @foods = current_user.foods
-  
+
     @recipe_food.value = @recipe_food.quantity * @recipe_food.food.price
     @recipe_food.recipe = @recipe
-  
+
     respond_to do |format|
       if @recipe_food.save
         format.html { redirect_to recipe_url(@recipe), notice: 'Recipe food was successfully created.' }
@@ -36,7 +36,6 @@ class RecipeFoodsController < ApplicationController
       end
     end
   end
-  
 
   # GET /recipe_foods/1/edit
   def edit

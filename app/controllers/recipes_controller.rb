@@ -49,10 +49,11 @@ class RecipesController < ApplicationController
   # DELETE /recipes/:id
   def destroy
     @recipe = Recipe.find(params[:id])
-  
+
     if @recipe.user_id == current_user.id
       if @recipe.recipe_foods.any?
-        redirect_to @recipe, alert: 'This recipe cannot be deleted because it has associated recipe foods, please remove the foods first.'
+        redirect_to @recipe,
+                    alert: 'Recipe cannot be deleted until it has foods.'
       else
         @recipe.destroy
         respond_to do |format|
@@ -64,7 +65,7 @@ class RecipesController < ApplicationController
         format.html { redirect_to recipes_url, alert: 'You do not have permission to delete this recipe.' }
       end
     end
-  end  
+  end
 
   private
 
