@@ -49,19 +49,22 @@ class RecipesController < ApplicationController
   # DELETE /recipes/:id
   def destroy
     @recipe = Recipe.find(params[:id])
-
-    # Ensure that the user is authorized to delete the recipe
+  
     if @recipe.user_id == current_user.id
-      @recipe.destroy
-      respond_to do |format|
-        format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      if @recipe.recipe_foods.any?
+        redirect_to @recipe, alert: 'This recipe cannot be deleted because it has associated recipe foods, please remove the foods first.'
+      else
+        @recipe.destroy
+        respond_to do |format|
+          format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+        end
       end
     else
       respond_to do |format|
         format.html { redirect_to recipes_url, alert: 'You do not have permission to delete this recipe.' }
       end
     end
-  end
+  end  
 
   private
 

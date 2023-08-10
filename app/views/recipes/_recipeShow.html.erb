@@ -27,6 +27,9 @@
         <%= recipe_food.food.name %> -
         <%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %> |
         Value: <%= recipe_food.value %>
+        <%= form_with(model: [recipe, recipe_food], method: :delete, local: true) do |form| %>
+          <%= form.submit 'Delete', data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </li>
       <% end %>
     </ul>
