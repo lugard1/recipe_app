@@ -115,7 +115,7 @@ body {
   margin-bottom: 30px;
 }
 
-.new-food, .new-recipe {
+.new-food, .new-recipe, .add-ingredient, .generate-shopping-list {
   margin-top: 10px;
   text-decoration: none;
   color: #060057;
@@ -124,7 +124,7 @@ body {
   border-radius: 3px;
 }
 
-.new-food:hover {
+.new-food:hover, .new-recipe:hover, .add-ingredient:hover, .generate-shopping-list:hover {
   background-color: #060057;
   color: #fff;
 }
@@ -245,4 +245,80 @@ tr:nth-child(even) {
 .recipe .recipe-desc {
   width: 58%;
   padding: 15px;
+}
+
+.recipe-details {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  font-family: sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.show-display {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+}
+
+.show-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-recipe-foods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.show-recipe-foods h3 {
+  margin: 20px 0px;
+}
+
+.public-label {
+  display: flex;
+}
+
+.recipe-time p {
+  margin-bottom: 15px;
+}
+
+.recipe-foods-table{
+  width: 100%;
+}
+
+.public-recipe {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.shopping-page-items {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  font-size: 18px;
 }

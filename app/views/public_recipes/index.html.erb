@@ -1,7 +1,24 @@
-<h1>Public Recipes</h1>
+<div class = "recipe_container">
+  <div class="title-button">
+    <h1 class = "recipe-title">Public Recipes</h1>
+  </div>
 
-<ul>
-  <% @public_recipes.each do |recipe| %>
-    <li><%= recipe.name %></li>
-  <% end %>
-</ul>
+  <div class="recipes">
+      <% @public_recipes.each do |recipe| %>
+          <div class="recipe">
+            <div class="recipe-name">
+                <h2><%= link_to recipe_path(recipe) do %><%= recipe.name %><% end %></h2>
+                <%= link_to "Delete", recipe, method: :delete, class: "remove-btn" %>
+            </div>
+            <div class="recipe-desc">
+                <p>
+                  <strong>Description:</strong>
+                  <%= recipe.description %>
+                </p>
+            </div>
+          </div>
+      <% end %>
+  </div>
+</div>  
+
+
