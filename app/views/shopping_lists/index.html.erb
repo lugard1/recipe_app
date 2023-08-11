@@ -1,21 +1,29 @@
-<h1 class='text_center'>Shopping Lists</h1>
-<p class='text_center'>Amount of food to buy: <%= @shoppings.length %></p>
-<p class='text_center'>Total value of food needed: <%= @shoppings.map { |hash| hash[:price] }.sum %></p>
-<div id="foods">
-  <table class="the_table">
-      <tr>
-        <th>Food</th>
-        <th>Quantity</th>
-        <th>Price</th>
-      </tr>
+<div class="food-list">
+  <div class="title-button">
+    <h1>Shopping List</h1>
+  </div>
+
+  <div class="shopping-page-items">
+    <p class='text_center'>Amount of food to buy: <%= @shoppings.length %></p>
+    <p class='text_center'>Total value of food needed: <%= @shoppings.map { |hash| hash[:price] }.sum %></p>
+  </div>
+<br><br>
+  <div id="foods">
+    <table class="foods-table">
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
 
       <% @shoppings.each do |food| %>
-  
           <tr>
             <td><%= food[:name] %></td>
             <td><%= food[:quantity] %></td>
             <td>$<%= food[:price] %></td>
           </tr>
       <% end %>
-  </table>
+    </table>
+  </div>
+
 </div>
