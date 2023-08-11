@@ -341,3 +341,7 @@ tr:nth-child(even) {
   margin: 0 auto;
   margin-top: 30px;
 }
+
+.recipe-creator {
+  margin-top: 20px;
+}
