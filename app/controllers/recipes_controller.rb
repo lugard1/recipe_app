@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    @recipeshow = Recipe.find(params[:id])
+    @recipeshow = Recipe.includes(:recipe_foods).find(params[:id])
   end
 
   # GET /recipes/new
@@ -50,11 +50,15 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
 
-    # Ensure that the user is authorized to delete the recipe
     if @recipe.user_id == current_user.id
-      @recipe.destroy
-      respond_to do |format|
-        format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      if @recipe.recipe_foods.any?
+        redirect_to @recipe,
+                    alert: 'Recipe cannot be deleted until it has foods.'
+      else
+        @recipe.destroy
+        respond_to do |format|
+          format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+        end
       end
     else
       respond_to do |format|
