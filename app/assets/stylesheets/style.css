@@ -78,7 +78,18 @@ body {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  padding: 0px 0px;
+  padding: 0 0;
+}
+
+.recipe-name a {
+  text-decoration: none;
+}
+
+.recipe-name h2 > a {
+  text-decoration: none;
+  color: #161616;
+  font-family: sans-serif;
+  font-size: 22px;
 }
 
 .nav-right ul li a {
@@ -86,8 +97,12 @@ body {
   color: #e2e2e2;
   font-family: sans-serif;
   font-size: 18px;
-  padding: 22px 0px;
-  margin: 0px 15px;
+  padding: 22px 0;
+  margin: 0 15px;
+}
+
+.recipe-name h2 > a:hover {
+  color: #5234fa;
 }
 
 .nav-right ul li a:hover {
@@ -101,7 +116,8 @@ body {
   font-family: sans-serif;
 }
 
-.food-list, .recipe_container {
+.food-list,
+.recipe_container {
   width: 70%;
   margin: 0 auto;
 }
@@ -115,7 +131,10 @@ body {
   margin-bottom: 30px;
 }
 
-.new-food, .new-recipe, .add-ingredient, .generate-shopping-list {
+.new-food,
+.new-recipe,
+.add-ingredient,
+.generate-shopping-list {
   margin-top: 10px;
   text-decoration: none;
   color: #060057;
@@ -124,7 +143,10 @@ body {
   border-radius: 3px;
 }
 
-.new-food:hover, .new-recipe:hover, .add-ingredient:hover, .generate-shopping-list:hover {
+.new-food:hover,
+.new-recipe:hover,
+.add-ingredient:hover,
+.generate-shopping-list:hover {
   background-color: #060057;
   color: #fff;
 }
@@ -227,21 +249,6 @@ tr:nth-child(even) {
   justify-content: space-between;
 }
 
-.recipe-name h2>a {
-  text-decoration: none;
-  color: #161616;
-  font-family: sans-serif;
-  font-size: 22px;
-}
-
-.recipe-name h2>a:hover {
-  color: #5234fa;
-}
-
-.recipe-name a {
-  text-decoration: none;
-}
-
 .recipe .recipe-desc {
   width: 58%;
   padding: 15px;
@@ -266,7 +273,7 @@ tr:nth-child(even) {
 .details {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0px;
+  padding: 20px 0;
   font-family: sans-serif;
   font-size: 16px;
 }
@@ -294,7 +301,7 @@ tr:nth-child(even) {
 }
 
 .show-recipe-foods h3 {
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 .public-label {
@@ -305,7 +312,7 @@ tr:nth-child(even) {
   margin-bottom: 15px;
 }
 
-.recipe-foods-table{
+.recipe-foods-table {
   width: 100%;
 }
 
