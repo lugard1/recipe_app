@@ -12,8 +12,28 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="messages">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <div class="navbar">
+      <nav class="nav">
+        <div class="nav-left">
+          <h1><a href="">RecipeApp</a></h1>
+        </div>
+
+        <div class="nav-right">
+          <ul>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Home', root_path %></li>
+            <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <%= yield %>
   </body>
 </html>
