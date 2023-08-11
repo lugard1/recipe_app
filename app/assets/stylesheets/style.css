@@ -25,6 +25,8 @@ body {
 .form-center input[type=text],
 .form-center input[type=email],
 .form-center input[type=password],
+.form-center input[type=number],
+.form-center select,
 .form-center input[type=datetime-local] {
   width: 100%;
   padding: 8px 10px;
@@ -328,4 +330,10 @@ tr:nth-child(even) {
   justify-content: space-between;
   font-family: sans-serif;
   font-size: 18px;
+}
+
+.recipe-foods-form {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
 }
