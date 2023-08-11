@@ -9,6 +9,10 @@ body {
 
 .messages {
   text-align: center;
+  margin-top: 20px;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .form-center {
@@ -336,4 +340,8 @@ tr:nth-child(even) {
   width: 70%;
   margin: 0 auto;
   margin-top: 30px;
+}
+
+.recipe-creator {
+  margin-top: 20px;
 }
