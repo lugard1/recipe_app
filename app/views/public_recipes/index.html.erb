@@ -16,11 +16,12 @@
         <div class="recipe-desc">
           <p class="total-items">
             <strong>Total Items:</strong>
-            <%= recipe.user.name %>
+            <%= recipe.recipe_foods.count %>
           </p>
+          <br><br>
           <p class="total-price">
             <strong>Total Price:</strong>
-            <%= recipe.user.name %>
+            <%= number_to_currency(recipe.recipe_foods.sum(&:value)) %>
           </p>
         </div>
       </div>
