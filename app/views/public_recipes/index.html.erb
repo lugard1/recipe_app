@@ -8,17 +8,18 @@
       <div class="recipe">
         <div class="recipe-name">
           <h2><%= link_to recipe_path(recipe) do %><%= recipe.name %><% end %></h2>
-          <% if current_user == recipe.user %>
-            <%= link_to "Delete", recipe, method: :delete, class: "remove-btn" %>
-          <% end %>
+          <p class="recipe-creator">
+            <strong>By:</strong>
+            <%= recipe.user.name %>
+          </p>
         </div>
         <div class="recipe-desc">
-          <p>
-            <strong>Description:</strong>
-            <%= recipe.description %>
+          <p class="total-items">
+            <strong>Total Items:</strong>
+            <%= recipe.user.name %>
           </p>
-          <p class="recipe-creator">
-            <strong>Created by:</strong>
+          <p class="total-price">
+            <strong>Total Price:</strong>
             <%= recipe.user.name %>
           </p>
         </div>
