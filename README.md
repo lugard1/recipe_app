@@ -15,8 +15,8 @@
     - [👤**Mursedul Islam Sumon**](#mursedul-islam-sumon)
   - [🔭Future Features](#future-features)
   - [🤝Contributing](#contributing)
-  - [⭐️Show your support](#️show-your-support)
-  - [🙏Acknowledgments](#acknowledgments)
+  - [⭐️Show your support](#support)
+  - [🙏Acknowledgments](#acknowledgements)
   - [📝License](#license)
 
 <!-- PROJECT DESCRIPTION -->
