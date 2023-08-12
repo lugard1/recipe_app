@@ -384,10 +384,6 @@ tr:nth-child(even) {
   border-radius: 20px;
 }
 
-.toggle input[type="checkbox"]:checked + .slider {
-  transform: translateX(20px);
-}
-
 .slider {
   position: absolute;
   top: 0;
@@ -397,4 +393,8 @@ tr:nth-child(even) {
   background-color: white;
   border-radius: 50%;
   transition: transform 0.2s;
+}
+
+.toggle input[type="checkbox"]:checked + .slider {
+  transform: translateX(20px);
 }
