@@ -1,33 +1,12 @@
 class ShoppingListsController < ApplicationController
   def index
-    @foods = Food.where(user_id: current_user.id).order(created_at: :desc)
+    @user_foods = Food.where(user_id: current_user.id).order(created_at: :desc)
     @recipes = Recipe.where(user_id: current_user.id)
 
-    array = @recipes.map do |recipe|
-      recipe.recipe_foods.map do |food|
-        { id: food.food_id, quantity: food.quantity }
-      end
-    end
-    @foody = array.flatten.map { |hash| { id: hash[:id], quantity: hash[:quantity] } }
+    # Get foods added to recipes
+    foods_added_to_recipes = @recipes.flat_map(&:recipe_foods).map(&:food_id)
 
-    @genfood = converting(@foods)
-    result = @genfood.reject { |obj| @foody.map { |o| o[:id] }.include?(obj[:id]) }
-
-    @shoppings = result
-  end
-
-  def converting(foood)
-    foood.map do |row|
-      {
-        id: row.id,
-        name: row.name,
-        measurement_unit: row.measurement_unit,
-        price: row.price,
-        quantity: row.quantity,
-        user_id: row.user_id,
-        created_at: row.created_at,
-        updated_at: row.updated_at
-      }
-    end
+    # Get unique foods that are added to recipes
+    @shoppings = Food.where(id: foods_added_to_recipes).order(:name)
   end
 end
