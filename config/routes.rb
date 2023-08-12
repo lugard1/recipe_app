@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :home, only: [:index]
-  resources :public_recipes 
+  
+  get '/public_recipes', to: 'public_recipes#index'
 
   resources :shopping_lists 
   resources :recipes do
