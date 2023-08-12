@@ -73,6 +73,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'webdrivers'
+  gem 'faker'
 end
 
 gem 'devise', '~> 4.9'
