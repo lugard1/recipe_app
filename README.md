@@ -1,27 +1,27 @@
 # 📗 Table of Contents
 
-- [📗 Table of Contents](#-table-of-contents)
-- [📖 Blog App Project ](#-blog-app-project-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites ](#prerequisites-)
-    - [Setup ](#setup-)
-    - [Install ](#install-)
-    - [Usage ](#usage-)
-  - [👥 Authors ](#-authors-)
-    - [👤 **Agu Lugard**](#-Agu-Lugard)
-    - [👤 **Mursedul Islam Sumon**](#-Mursedul-Islam-Sumon)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
+- [📗Table of Contents](#-table-of-contents)
+- [📖Recipe App Project](#recipe-app-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [💻Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+  - [Authors](#authors)
+    - [👤**Agu Lugard**](#agu-lugard)
+    - [👤**Mursedul Islam Sumon**](#mursedul-islam-sumon)
+  - [🔭Future Features](#future-features)
+  - [🤝Contributing](#contributing)
+  - [⭐️Show your support](#️show-your-support)
+  - [🙏Acknowledgments](#acknowledgments)
+  - [📝License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Recipe App Project <a name="about-project"></a>
+# 📖 Recipe App Project <a name="recipe-app-project"></a>
 
 **Recipe App Project** This is a project where frontend and backend properties using Ruby on Rails was implemented.
 
@@ -48,7 +48,7 @@
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
+## 💻 Getting Started<a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
 
@@ -86,7 +86,7 @@ Clone this repository to your desired folder:
 
 <!-- AUTHORS -->
 
-## 👤Authors <a name="authors"></a>
+## 👤Authors<a name="authors"></a>
 
 ### 👤 **Lugard Agu**
 
