@@ -21,10 +21,10 @@ RSpec.describe 'public_recipes/index.html.erb', type: :feature do
       # expect(page).to have_content 'Total price'
     end
 
-    # it 'does not allow users to delete a recipe' do
-    #   visit '/public_recipes'
-    #   expect(page).to_not have_content 'Delete'
-    # end
+    it 'does not allow users to delete a recipe' do
+      visit '/public_recipes'
+      expect(page).to_not have_content 'Delete'
+    end
 
     it 'has a link to recipe show page' do
       visit '/public_recipes'
