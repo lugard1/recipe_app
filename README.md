@@ -10,7 +10,7 @@
     - [Setup ](#setup-)
     - [Install ](#install-)
     - [Usage ](#usage-)
-  - [👥 Authors ](#-authors-)
+  - [👥 Authors ](#authors)
     - [👤 **Agu Lugard**](#-Agu-Lugard)
     - [👤 **Mursedul Islam Sumon**](#-Mursedul-Islam-Sumon)
   - [🔭 Future Features ](#-future-features-)

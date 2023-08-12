@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
@@ -27,7 +28,11 @@
             <li><%= link_to 'Shopping List', shopping_lists_path %></li>
             <li> | </li>
             <li>
-              <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete, confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, :class => 'navbar-link'  %>
+              <% if user_signed_in? %>
+                <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete, confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, :class => 'navbar-link'  %>
+              <% else %>
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+              <% end %>
             </li>
           </ul>
         </div>

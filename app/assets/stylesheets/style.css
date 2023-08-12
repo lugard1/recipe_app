@@ -268,12 +268,17 @@ tr:nth-child(even) {
 
 .name {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 40px;
   font-family: sans-serif;
   font-size: 22px;
   font-weight: bold;
+}
+
+.recipe-links {
+  display: flex;
+  justify-content: space-between;
 }
 
 .details {
@@ -296,7 +301,11 @@ tr:nth-child(even) {
 
 .show-buttons {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #060057;
 }
 
 .show-recipe-foods {
@@ -344,4 +353,48 @@ tr:nth-child(even) {
 
 .recipe-creator {
   margin-top: 20px;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-label-2 {
+  margin-right: 10px;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+}
+
+.toggle input[type="checkbox"]:checked + .slider {
+  transform: translateX(20px);
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
 }

@@ -33,7 +33,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
@@ -46,7 +45,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # DELETE /recipes/:id
   def destroy
     @recipe = Recipe.find(params[:id])
 
@@ -69,13 +67,11 @@ class RecipesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_recipe
     @recipe = Recipe.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public, :user_id)
-  end
+  end  
 end
