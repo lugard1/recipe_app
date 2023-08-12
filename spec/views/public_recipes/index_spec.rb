@@ -1,35 +1,35 @@
 require 'rails_helper'
 
-RSpec.describe 'public_recipes/index.html.erb', type: :feature do
-  describe 'after log in' do
-    before(:each) do
-      @user = User.create(name: 'Md', email: 'mdnw@gmail.com', password: 'md123', confirmed_at: Time.now)
-      @recipe1 = Recipe.create(user_id: @user.id, name: 'Burger', preparation_time: 20, cooking_time: 50, description: 'Home style american burger', public: true)
-      @recipe2 = Recipe.create(user_id: @user.id, name: 'Pizza', preparation_time: 10, cooking_time: 30, description: 'Classic Italian pizza', public: false)
+RSpec.describe 'public_recipes/index.html.erb', type: :view do
+  before do
+    @user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
 
-      visit 'users/sign_in'
-      fill_in 'Email', with: 'mdnw@gmail.com'
-      fill_in 'Password', with: 'md123'
-      click_on 'Log in'
-    end
+    # Mock a user session for the view
+    allow(view).to receive(:current_user).and_return(@user)
 
-    it 'shows a list of public recipes' do
-      visit '/public_recipes'
-      expect(page).to have_content 'Public Recipes'
-      expect(page).to have_content 'Burger'
-      # expect(page).to have_content 'Total food items'
-      # expect(page).to have_content 'Total price'
-    end
+    @recipe1 = Recipe.create(name: 'Recipe 1', user: @user)
+    @recipe2 = Recipe.create(name: 'Recipe 2', user: @user)
+    assign(:public_recipes, [@recipe1, @recipe2])
+    render
+  end
 
-    it 'does not allow users to delete a recipe' do
-      visit '/public_recipes'
-      expect(page).to_not have_content 'Delete'
-    end
+  it "displays the title 'Public Recipes'" do
+    expect(rendered).to have_selector('.recipe-title', text: 'Public Recipes')
+  end
 
-    it 'has a link to recipe show page' do
-      visit '/public_recipes'
-      click_on 'Burger'
-      expect(current_path).to eql "/recipes/#{@recipe1.id}"
-    end
+  it 'displays recipe names and creators' do
+    expect(rendered).to have_selector('.recipe-name', text: 'Recipe 1')
+    expect(rendered).to have_selector('.recipe-name', text: 'Recipe 2')
+    expect(rendered).to have_selector('.recipe-creator', text: /\A\s*By:\s*John Doe\s*\z/, count: 2)
+  end
+
+  it 'displays total items and total price for each recipe' do
+    expect(rendered).to have_selector('.total-items', text: /\A\s*Total Items:\s*0\s*\z/, count: 2)
+    expect(rendered).to have_selector('.total-price', text: /\A\s*Total Price:\s*\$0.00\s*\z/, count: 2)
+  end
+
+  it 'renders links to recipe show pages' do
+    expect(rendered).to have_link('Recipe 1', href: recipe_path(@recipe1))
+    expect(rendered).to have_link('Recipe 2', href: recipe_path(@recipe2))
   end
 end

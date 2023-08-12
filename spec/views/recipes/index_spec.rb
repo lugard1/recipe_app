@@ -1,35 +1,31 @@
 require 'rails_helper'
 
-RSpec.describe 'recipes/index', type: :feature do
-  describe 'after log in' do
-    before(:each) do
-      @user = User.create(name: 'Jonas', email: 'jonasnw@gmail.com', password: 'jonas123', confirmed_at: Time.now)
-      @recipe1 = Recipe.create(user_id: @user.id, name: 'Burger', preparation_time: 20, cooking_time: 50, description: 'Home style american burger', public: true)
-      @recipe2 = Recipe.create(user_id: @user.id, name: 'Pizza', preparation_time: 10, cooking_time: 30, description: 'Classic Italian pizza', public: false)
+RSpec.describe 'Recipes index page', type: :feature do
+  let(:user) { create(:user) }
+  let!(:recipe1) { create(:recipe, user:) }
+  let!(:recipe2) { create(:recipe) }
 
-      visit 'users/sign_in'
-      fill_in 'Email', with: 'jonasnw@gmail.com'
-      fill_in 'Password', with: 'jonas123'
-      click_on 'Log in'
-    end
+  before do
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
 
-    it 'displays the information about the recipe' do
-      visit '/recipes'
-      expect(page).to have_content 'Burger'
-      expect(page).to have_content 'Pizza'
-      expect(page).to have_content 'Home style american burger'
-      expect(page).to have_content 'Classic Italian pizza'
-    end
+    visit recipes_path
+  end
 
-    it 'shows buttons to add new recipe' do
-      visit '/recipes'
-      expect(page).to have_content('Add New Recipe')
-    end
+  it 'displays the list of recipes owned by the user' do
+    within('.recipe_container') do
+      expect(page).to have_content('Recipes')
+      expect(page).to have_link('Add recipe', href: new_recipe_path)
 
-    it 'should take you to add new recipe form when clicking on the add new recipe button' do
-      visit '/recipes'
-      click_on 'Add New Recipe'
-      expect(current_path).to eql '/recipes/new'
+      within('.recipes') do
+        expect(page).to have_content(recipe1.name)
+        expect(page).to have_content(recipe1.description)
+        expect(page).to have_link('Delete', href: recipe_path(recipe1))
+
+        expect(page).not_to have_content(recipe2.name)
+      end
     end
   end
 end
