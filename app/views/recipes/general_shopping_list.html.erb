@@ -1,0 +1,11 @@
+<h2>Missing Foods</h2>
+<% if @missing_foods.present? %>
+  <ul>
+    <% @missing_foods.each do |food| %>
+      <li><%= food.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No missing foods found.</p>
+<% end %>
+<%= link_to 'Back to Recipes', recipes_path %>

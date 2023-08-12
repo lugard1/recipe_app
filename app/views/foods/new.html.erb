@@ -1,0 +1,11 @@
+<div class="form-center">
+  <h1 class="food-form-title">New food</h1>
+
+  <%= render "form", food: @food %>
+
+  <br>
+
+  <div>
+    <%= link_to "Back to foods", foods_path, class: "foods-list-link" %>
+  </div>
+</div>

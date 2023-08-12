@@ -1,0 +1,14 @@
+<div class="food-details">
+
+  <h1>Food name: <%= @food.name %></h1>
+
+  <p><strong>Measurement Unit:</strong> <%= @food.measurement_unit %></p>
+  <p><strong>Price:</strong> <%= @food.price %></p>
+  <p><strong>Quantity:</strong> <%= @food.quantity %></p>
+
+  <div class="food-actions">
+    <%= link_to "Back to foods", foods_path, class: "foods-link" %>
+    <%= button_to "Delete this food", @food, method: :delete %>
+  </div>
+
+</div>

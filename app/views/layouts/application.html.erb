@@ -7,10 +7,41 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
+    <div class="navbar">
+      <nav class="nav">
+        <div class="nav-left">
+          <h1><a href="">RecipeApp</a></h1>
+        </div>
+
+        <div class="nav-right">
+          <ul>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Foods', foods_path %></li>
+            <li><%= link_to 'Recipes', recipes_path %></li>
+            <li><%= link_to 'Public Recipes', public_recipes_path %></li>
+            <li><%= link_to 'Shopping List', shopping_lists_path %></li>
+            <li> | </li>
+            <li>
+              <% if user_signed_in? %>
+                <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete, confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, :class => 'navbar-link'  %>
+              <% else %>
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="messages">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>

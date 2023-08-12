@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-bottom: 70px;
+}
+
+.messages {
+  text-align: center;
+  margin-top: 20px;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.form-center {
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.form-center h2 {
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.form-center input[type=text],
+.form-center input[type=email],
+.form-center input[type=password],
+.form-center input[type=number],
+.form-center select,
+.form-center input[type=datetime-local] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.form-center textarea {
+  width: 100%;
+  height: 60px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.form-center input[type=submit] {
+  padding: 8px 15px;
+  font-family: sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.navbar {
+  background-color: #2113df;
+  padding: 15px 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-right ul {
+  display: flex;
+}
+
+.nav-right ul li {
+  list-style-type: none;
+}
+
+.nav-right ul li:nth-child(6) {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 0;
+}
+
+.recipe-name a {
+  text-decoration: none;
+}
+
+.recipe-name h2 > a {
+  text-decoration: none;
+  color: #161616;
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.nav-right ul li a {
+  text-decoration: none;
+  color: #e2e2e2;
+  font-family: sans-serif;
+  font-size: 18px;
+  padding: 22px 0;
+  margin: 0 15px;
+}
+
+.recipe-name h2 > a:hover {
+  color: #5234fa;
+}
+
+.nav-right ul li a:hover {
+  border-top: 4px solid #fff;
+  color: #fff;
+}
+
+.home-page {
+  text-align: center;
+  padding-top: 20px;
+  font-family: sans-serif;
+}
+
+.food-list,
+.recipe_container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.title-button {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.new-food,
+.new-recipe,
+.add-ingredient,
+.generate-shopping-list {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #060057;
+  border: 1px solid #060057;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.new-food:hover,
+.new-recipe:hover,
+.add-ingredient:hover,
+.generate-shopping-list:hover {
+  background-color: #060057;
+  color: #fff;
+}
+
+.foods-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+tr,
+td {
+  font-family: sans-serif;
+  font-size: 18px;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dfdfdf;
+}
+
+.button_to button {
+  padding: 7px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.food-form-title {
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+.foods-list-link {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.foods-list-link:hover {
+  text-decoration: underline;
+}
+
+.food-details {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.food-details h1 {
+  font-family: sans-serif;
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.food-details p {
+  font-family: sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.food-actions {
+  display: flex;
+  margin-top: 30px;
+}
+
+.food-actions button {
+  margin-right: 15px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.foods-link {
+  padding: 7px;
+  border: 1px solid #161616;
+  background-color: #e6e6ee;
+  margin-right: 15px;
+  text-decoration: none;
+  color: #232323;
+  font-family: sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.recipe {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #232323;
+  box-sizing: border-box;
+  min-height: 80px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.recipe .recipe-name {
+  width: 40%;
+  padding: 15px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipe .recipe-desc {
+  width: 58%;
+  padding: 15px;
+}
+
+.recipe-details {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-family: sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.recipe-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.show-display {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+}
+
+.show-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #060057;
+}
+
+.show-recipe-foods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.show-recipe-foods h3 {
+  margin: 20px 0;
+}
+
+.public-label {
+  display: flex;
+}
+
+.recipe-time p {
+  margin-bottom: 15px;
+}
+
+.recipe-foods-table {
+  width: 100%;
+}
+
+.public-recipe {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.shopping-page-items {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.recipe-foods-form {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.recipe-creator {
+  margin-top: 20px;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-label-2 {
+  margin-right: 10px;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.toggle input[type="checkbox"]:checked + .slider {
+  transform: translateX(20px);
+}

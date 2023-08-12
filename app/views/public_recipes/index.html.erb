@@ -1,0 +1,30 @@
+<div class="recipe_container">
+  <div class="title-button">
+    <h1 class="recipe-title">Public Recipes</h1>
+  </div>
+
+  <div class="recipes">
+    <% @public_recipes.each do |recipe| %>
+      <div class="recipe">
+        <div class="recipe-name">
+          <h2><%= link_to recipe_path(recipe) do %><%= recipe.name %><% end %></h2>
+          <p class="recipe-creator">
+            <strong>By:</strong>
+            <%= recipe.user.name %>
+          </p>
+        </div>
+        <div class="recipe-desc">
+          <p class="total-items">
+            <strong>Total Items:</strong>
+            <%= recipe.recipe_foods.count %>
+          </p>
+          <br><br>
+          <p class="total-price">
+            <strong>Total Price:</strong>
+            <%= number_to_currency(recipe.recipe_foods.sum(&:value)) %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

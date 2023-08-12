@@ -1,0 +1,54 @@
+<div class="recipe-details">
+
+  <div class="name">
+    <%= recipe.name %>
+  </div>
+
+  <div class="details">
+    <div class="show-display">
+      <div class = "recipe-time">
+        <p>Preparation time: <%= recipe.preparation_time %> </p>
+        <p>Cooking time: <%= recipe.cooking_time %> </p>
+        <%= recipe.description %>
+        
+      </div>
+    </div>
+    <div class="steps">
+        <p class="toggle-label-2">Public</p> <%= render "checkbox", recipe: recipe %>
+    </div>
+  </div>
+  <div class="show-buttons">
+      <%= link_to 'Generate Shopping List', shopping_lists_path, class: 'generate-shopping-list' %>
+      <%= link_to 'Add Ingredient', new_recipe_recipe_food_path(recipe), class: 'add-ingredient' %>
+  </div>
+
+  <% if @recipeshow.recipe_foods.present? %>
+  <div class="show-recipe-foods">
+    <h3>Recipe Foods</h3>
+    <table class="recipe-foods-table">
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Action</th>
+      </tr>
+      <% @recipeshow.recipe_foods.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.quantity %></td>
+          <td><%= recipe_food.value %></td>
+          <td><%= form_with(model: [recipe, recipe_food], method: :delete, local: true) do |form| %>
+          <%= form.submit 'Delete', data: { confirm: 'Are you sure?' } %>
+        <% end %></td>
+        </tr>
+      <% end %>  
+    </table>
+  </div>
+  <% end %>
+  <br>
+  <br>
+  <div class="recipe-links">
+    <%= link_to "Back to recipes", recipes_path, class: 'foods-list-link' %>
+    <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+  </div>
+</div>

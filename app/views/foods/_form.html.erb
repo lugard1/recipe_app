@@ -1,0 +1,33 @@
+<%= form_with(model: food) do |form| %>
+  <% if food.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+        <% food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- Add fields for the food attributes -->
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br><br>
+  <%= form.label :measurement_unit %>
+  <%= form.text_field :measurement_unit %>
+  <br><br>
+  <%= form.label :price %>
+  <%= form.text_field :price %>
+  <br><br>
+  <%= form.label :quantity %>
+  <%= form.text_field :quantity %>
+
+  <!-- Add a hidden field to associate the food with the current user -->
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

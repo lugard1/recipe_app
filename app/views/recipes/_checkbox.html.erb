@@ -1,0 +1,27 @@
+<!-- views/recipes/_checkbox.html.erb -->
+<div class="public-label">
+  <%= form_with(model: recipe, local: true, data: { remote: true }) do |form| %>
+    <div class="recipe-toggle">
+      <% if recipe.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe change public:</h2>
+          <ul>
+            <% recipe.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+      <div class="toggle-container">
+        <%= form.label :public, class: 'toggle-label' do %>
+          <%= form.hidden_field :public, value: 'false' %>
+          <label class="toggle">
+            <%= form.check_box :public, class: 'toggle-checkbox', data: { turbo: false } %>
+            <span class="slider"></span>
+          </label>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
